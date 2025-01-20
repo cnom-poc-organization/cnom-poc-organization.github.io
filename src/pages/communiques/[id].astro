@@ -1,0 +1,51 @@
+---
+import Communique from "../../components/communiques/Communique.astro";
+import Layout from "../../layouts/Layout.astro";
+const { id, title, date, author, text } = Astro.props;
+export async function getStaticPaths() {
+    return [
+        // { params: { /* required */ }, props: { /* optional */ } },
+        {
+            params: {
+                id: "1",
+            },
+            props: {
+                id: "1",
+                title: "Example Communique 3",
+                date: "21.01.2024",
+                author: "test",
+                text: "This is the third example communique",
+            },
+        }, // [post] is the parameter
+        {
+            params: {
+                id: "2",
+            },
+            props: {
+                id: "1",
+                title: "Example Communique 3",
+                date: "21.01.2024",
+                author: "test",
+                text: "This is the third example communique",
+            },
+        },
+        {
+            params: {
+                id: "3",
+            },
+            props: {
+                id: "1",
+                title: "Example Communique 3",
+                date: "21.01.2024",
+                author: "test",
+                text: "This is the third example communique",
+            },
+        }, // must match the file name
+        // ...
+    ];
+}
+---
+
+<Layout>
+    <Communique id={id} title={title} date={date} author={author} text={text} />
+</Layout>

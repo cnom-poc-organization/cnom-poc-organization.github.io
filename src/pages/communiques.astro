@@ -1,0 +1,99 @@
+---
+import Summary from "../components/communiques/Summary.astro";
+import Layout from "../layouts/Layout.astro";
+import cnoma_logo from "../../public/cnomimg.jpg";
+---
+
+<style>
+    .text-center {
+        text-align: center;
+    }
+
+    .communiques-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        padding: 16px;
+    }
+
+    .communique-item {
+        padding: 16px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s;
+    }
+
+    .communique-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.15);
+    }
+
+    .communique-item h2 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin-bottom: 12px;
+        border-bottom: 2px solid #3b82f6;
+        padding-bottom: 8px;
+    }
+
+    @media (max-width: 768px) {
+        .communiques-list {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 640px) {
+        .communiques-list {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<Layout>
+    <div>
+        <div class="text-container">
+            <h1 class="text-center">Communiqués</h1>
+            <p class="text-center">
+                Bienvenue sur notre page de communiqués officiels. Ici, vous
+                trouverez l'ensemble des communications importantes et des
+                annonces relatives à notre activité professionnelle.
+            </p>
+            <p class="text-center">
+                Consultez ci-dessous nos derniers communiqués :
+            </p>
+        </div>
+
+        <div class="communiques-list">
+            <Summary
+                id="1"
+                title="Example Communique 1"
+                href="/communiques/1"
+                date="19.01.2024"
+                author="test"
+                logo={cnoma_logo}
+                summary="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            />
+
+            <Summary
+                id="2"
+                title="Example Communique 2"
+                href="/communiques/2"
+                date="20.01.2024"
+                author="test"
+                logo={cnoma_logo}
+                summary="Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            />
+
+            <Summary
+                id="3"
+                title="Example Communique 3"
+                href="/communiques/3"
+                date="21.01.2024"
+                author="test"
+                logo={cnoma_logo}
+                summary="Ut enim ad minim veniam, quis nostrud exercitation ullamco."
+            />
+        </div>
+    </div>
+</Layout>

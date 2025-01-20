@@ -1,0 +1,138 @@
+---
+import cnoma_logo from "../../public/cnomimg.jpg";
+import Layout from "../layouts/Layout.astro";
+import Telechargement from "../components/telechargements/Telechargement.astro";
+---
+
+<style>
+    img {
+        border-radius: 50%;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .articles-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        padding: 16px;
+    }
+
+    .article-item {
+        padding: 16px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s;
+    }
+
+    .article-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.15);
+    }
+
+    .article-item h2 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin-bottom: 12px;
+        border-bottom: 2px solid #3b82f6;
+        padding-bottom: 8px;
+    }
+
+    .article-item img {
+        width: 128px;
+        height: 128px;
+        margin: 0 auto 12px;
+        display: block;
+        border: 3px solid #3b82f6;
+        transition: transform 0.2s;
+    }
+
+    .article-item:hover img {
+        transform: scale(1.05);
+    }
+
+    .article-item p {
+        margin-bottom: 16px;
+        padding: 8px;
+        background: #f3f4f6;
+        border-radius: 4px;
+    }
+
+    .article-item button {
+        background: #3b82f6;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 8px;
+        opacity: 0.5;
+        cursor: not-allowed;
+        transition: opacity 0.2s;
+    }
+
+    .article-item button:hover {
+        opacity: 0.7;
+    }
+
+    .section-divider {
+        margin: 40px 0;
+        border-top: 2px solid #e5e7eb;
+    }
+
+    @media (max-width: 768px) {
+        .articles-list {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 640px) {
+        .articles-list {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+<Layout>
+    <div class="text-container">
+        <h1 class="text-center">Espace de Téléchargements</h1>
+        <p class="text-center">
+            Bienvenue sur notre page de téléchargements. Ici, vous trouverez
+            tous les documents importants et ressources disponibles au
+            téléchargement.
+        </p>
+        <p class="text-center">
+            Consultez ci-dessous nos documents disponibles :
+        </p>
+    </div>
+    <div class="articles-list">
+        <Telechargement
+            id="1"
+            title="Example Telechargement 1"
+            href=""
+            date="19.01.2024"
+            author="test"
+            logo={cnoma_logo}
+            summary="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        />
+
+        <Telechargement
+            id="2"
+            title="Example Telechargement 2"
+            href=""
+            date="20.01.2024"
+            author="test"
+            logo={cnoma_logo}
+            summary="Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        />
+
+        <Telechargement
+            id="3"
+            title="Example Telechargement 3"
+            href=""
+            date="21.01.2024"
+            author="test"
+            logo={cnoma_logo}
+            summary="Ut enim ad minim veniam, quis nostrud exercitation ullamco."
+        />
+    </div>
+</Layout>

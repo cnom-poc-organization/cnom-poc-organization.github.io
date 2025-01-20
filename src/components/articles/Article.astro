@@ -1,0 +1,14 @@
+---
+const { id, title, href, logo, summary } = Astro.props;
+---
+
+<article class="article-item">
+    <h2>{title}</h2>
+    <a href={href}>
+        <img src={logo.src} alt={title} />
+    </a>
+    <p>
+        {summary}
+    </p>
+    <button disabled>Lire</button>
+</article>

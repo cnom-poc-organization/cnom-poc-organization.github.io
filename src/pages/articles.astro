@@ -1,0 +1,213 @@
+---
+import cnoma_logo from "../../public/cnomimg.jpg";
+import ibnsina_picture from "../assets/ibnsina-150x150.jpg";
+import albucasis_picture from "../assets/albucasis-150x150.jpg";
+import alkindi_picture from "../assets/alkindi-150x150.jpg";
+import altusi_picture from "../assets/altusi-150x150.jpg";
+import sermenthippocrate_picture from "../assets/sermenthippocrate.jpg";
+import Layout from "../layouts/Layout.astro";
+import ArticleSummary from "../components/articles/ArticleSummary.astro";
+---
+
+<style>
+    img {
+        border-radius: 50%;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .articles-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        padding: 16px;
+    }
+
+    .article-item {
+        padding: 16px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s;
+    }
+
+    .article-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.15);
+    }
+
+    .article-item h2 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin-bottom: 12px;
+        border-bottom: 2px solid #3b82f6;
+        padding-bottom: 8px;
+    }
+
+    .article-item img {
+        width: 128px;
+        height: 128px;
+        margin: 0 auto 12px;
+        display: block;
+        border: 3px solid #3b82f6;
+        transition: transform 0.2s;
+    }
+
+    .article-item:hover img {
+        transform: scale(1.05);
+    }
+
+    .article-item p {
+        margin-bottom: 16px;
+        padding: 8px;
+        background: #f3f4f6;
+        border-radius: 4px;
+    }
+
+    .article-item button {
+        background: #3b82f6;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 8px;
+        opacity: 0.5;
+        cursor: not-allowed;
+        transition: opacity 0.2s;
+    }
+
+    .article-item button:hover {
+        opacity: 0.7;
+    }
+
+    .section-divider {
+        margin: 40px 0;
+        border-top: 2px solid #e5e7eb;
+    }
+
+    @media (max-width: 768px) {
+        .articles-list {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 640px) {
+        .articles-list {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+<Layout>
+    <div>
+        <div class="text-container">
+            <h1 class="text-center">Articles</h1>
+            <p class="text-center">
+                Bienvenue sur la page rassemblant quelques articles de
+                contextualisation. Ce document important énonce les principes
+                éthiques et les règles professionnelles essentielles à notre
+                profession.
+            </p>
+            <p class="text-center">
+                Voici quelques articles qui encadrent notre profession et notre
+                exercice :
+            </p>
+        </div>
+        <div class="articles-list">
+            <ArticleSummary
+                id="1"
+                title="Déclaration d'Helsinki"
+                href=""
+                logo={cnoma_logo}
+                summary="Principes éthiques applicables aux recherches médicales sur des sujets humains. Adoptée par la 18e Assemblée générale, Helsinki, Juin 1964 et amendée par les 29e Assemblée générale, Tokyo, .."
+            />
+
+            <ArticleSummary
+                id="2"
+                title="Révision d'Helsinki"
+                href=""
+                logo={cnoma_logo}
+                summary="La Déclaration d'Helsinki (DoH) est la politique la plus connue de l'AMM. Elle a été adoptée en 1964 et amendée cinq fois dont la dernière fois en 2000. En 2002 et 2004, des notes explicatives ..."
+            />
+
+            <ArticleSummary
+                id="3"
+                title="Ethique et Télémédecine"
+                href=""
+                logo={cnoma_logo}
+                summary="Prise de Position de l'AMM sur l'Ethique en Télémédecine adoptée par l'Assemblée Générale de l'AMM, Copenhague, Danemark, octobre 2007 DEFINITION La télémédecine ..."
+            />
+
+            <ArticleSummary
+                id="4"
+                title="Réflexion sur le Code"
+                href=""
+                logo={cnoma_logo}
+                summary="Réflexion sur le Code de Déontologie Médicale I. Rappel historique autour de la déontologie médicale en Algérie Comme vous le savez ou pas encore, le Conseil national de déontologie médicale a ..."
+            />
+
+            <ArticleSummary
+                id="5"
+                title="Point de vue"
+                href=""
+                logo={cnoma_logo}
+                summary="Code de Déontologie Point de Vue INTRODUCTION La communauté des professions médicales dans toutes ses composantes a été privée pendant de nombreuses années de ses ordres. Cette privation ..."
+            />
+
+            <ArticleSummary
+                id="6"
+                title="Serment d'Hippocrate"
+                href=""
+                logo={sermenthippocrate_picture}
+                summary="Au moment d'être admis(e) à exercer la médecine, je promets et je jure d'être fidèle aux lois de l'honneur et de la probité. Mon premier souci sera de rétablir, de préserver ou de ..."
+            />
+
+            <ArticleSummary
+                id="7"
+                title="Ibn Sina"
+                href=""
+                logo={ibnsina_picture}
+                summary="Ibn Sînâ – Avicenne Ibn Sînâ – Avicenne (980 – 1037) Ibn Sînâ, connu en Occident sous le nom d'Avicenne, fut un célèbre médecin, philosophe, encyclopédiste, mathématicien ..."
+            />
+
+            <ArticleSummary
+                id="8"
+                title="El Kindi"
+                href=""
+                logo={alkindi_picture}
+                summary="Ya` qûb Ibn Ishâq Al-Kindi (Alkindus) Abû Youssouf Ya`qûb Ibn Ishâq Al-Kindi naquit à Al-Kûfah (Irak) vers 800 après J.-C. Son père était fonctionnaire sous le règne de Hârûn Ar-Rashîd. Al-Kindi ..."
+            />
+
+            <ArticleSummary
+                id="9"
+                title="El Tusi"
+                href=""
+                logo={altusi_picture}
+                summary="NASIR al-din al-TUSI Nasir al-Din al-Tusi nom complet (Abu Jafar Muhammad Ibn Muhammad Ibn al-Hasan Nasir al-Din al-Tusi), est né à Tus (Khurasan) CE en 1201, il a appris les sciences et la philosophie ..."
+            />
+
+            <ArticleSummary
+                id="10"
+                title="Al-Zahrawi"
+                href=""
+                logo={albucasis_picture}
+                summary="Albucasis, (Khalaf ibn Abbas Al-Zahrawi) 936-1013 Chirurgien arabe d'Espagne Abulcasis s'impose comme le meilleur représentant et le grand maître de la chirurgie hispano-arabe de l'époque, ..."
+            />
+
+            <ArticleSummary
+                id="11"
+                title="Les Certificats Médicaux"
+                href=""
+                logo={cnoma_logo}
+                summary="LES CERTIFICATS MEDICAUX I – PRINCIPES GENERAUX L'évolution rapide de la vie sociale et professionnelle impose au médecin la rédaction d'un grand nombre de certificats engageant leurs ..."
+            />
+
+            <ArticleSummary
+                id="12"
+                title="De la Confraternité"
+                href=""
+                logo={cnoma_logo}
+                summary="'Mon cher confrère, telle est la formule par laquelle nous débutons toutes nos correspondances à un autre médecin. Elle est consacrée par l'usage et contient un sens fondamental et une signification ..."
+            />
+        </div>
+    </div>
+</Layout>

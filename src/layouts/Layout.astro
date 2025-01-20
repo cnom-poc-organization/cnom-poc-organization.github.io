@@ -1,0 +1,186 @@
+---
+import cnoma_logo from "../assets/consel_national_de_lordre_des_medecins_algeries.jpg";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/cnomimg.jpg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Conseil National de l'Ordre des Médécins</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+            rel="stylesheet"
+        />
+    </head>
+    <header class="top-banner">
+        <img src={cnoma_logo.src} alt="CNOM Logo" />
+    </header>
+    <body>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="/"><i class="fas fa-home"></i> Accueil</a></li>
+                <li>
+                    <a href="/code-de-deontologie" aria-disabled="true"
+                        ><i class="fas fa-book"></i> Code de Déontologie</a
+                    >
+                </li>
+                <li>
+                    <a href="/communiques"
+                        ><i class="fas fa-bullhorn"></i> Communiques</a
+                    >
+                </li>
+                <li>
+                    <a href="/articles"
+                        ><i class="fas fa-newspaper"></i> Articles et publications</a
+                    >
+                </li>
+                <li>
+                    <a href="/telechargement"
+                        ><i class="fas fa-download"></i> Telechargement</a
+                    >
+                </li>
+                <li>
+                    <a href="/contact"
+                        ><i class="fas fa-envelope"></i> Contact</a
+                    >
+                </li>
+            </ul>
+        </nav>
+        <main class="content-area">
+            <slot />
+        </main>
+    </body>
+    <footer>
+        <p>Site internet Déssiné et Développé par interop4health</p>
+        <a href="https://interop4health.github.io/"
+            ><i class="fas fa-globe"></i> interop4health.github.io</a
+        >
+    </footer>
+
+    <style>
+        html,
+        body {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%) fixed;
+            font-family:
+                "Poppins",
+                system-ui,
+                -apple-system,
+                sans-serif;
+            color: #2d3436;
+            line-height: 1.8;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+            max-width: 100%;
+            margin: 0;
+        }
+
+        .top-banner {
+            width: 100%;
+            background: white;
+            padding: 1rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .top-banner img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+            transition: transform 0.3s ease;
+        }
+
+        .top-banner img:hover {
+            transform: scale(1.02);
+        }
+
+        .main-nav {
+            width: 100%;
+            background: #2d3436;
+            padding: 1rem 0;
+        }
+
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .main-nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .main-nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .content-area {
+            max-width: 1200px;
+            width: 100%;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        footer {
+            width: 100%;
+            margin-top: auto;
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #636e72;
+            background: white;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer a {
+            color: #0984e3;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #0052cc;
+        }
+
+        * {
+            box-sizing: border-box;
+            transition: all 0.2s ease-in-out;
+        }
+
+        ::selection {
+            background: #0984e3;
+            color: white;
+        }
+    </style>
+
+
+</html>

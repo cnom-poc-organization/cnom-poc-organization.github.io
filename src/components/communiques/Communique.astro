@@ -1,0 +1,66 @@
+---
+// Access passed-in component props, like `<X title="Hello, World" />`
+const { id, title, date, author, text, logo } = Astro.props;
+---
+
+<style>
+    .communications-page {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .communication-item {
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+
+    .communication-item header {
+        margin-bottom: 20px;
+    }
+
+    .communication-item h1 {
+        font-size: 24px;
+        margin: 0 0 10px 0;
+    }
+
+    .meta {
+        color: #666;
+        font-size: 14px;
+    }
+
+    .date {
+        margin-right: 15px;
+    }
+
+    .content {
+        line-height: 1.6;
+        margin: 20px 0;
+    }
+
+    .communication-id {
+        color: #999;
+        font-size: 12px;
+        text-align: right;
+    }
+</style>
+
+<div class="communications-page">
+    <article class="communication-item">
+        <header>
+            <h1>{title}</h1>
+            <div class="meta">
+                <span class="date">{date}</span>
+                <span class="author">By {author}</span>
+            </div>
+        </header>
+        <div class="content">
+            <p>{text}</p>
+        </div>
+        <footer>
+            <div class="communication-id">ID: {id}</div>
+        </footer>
+    </article>
+</div>
